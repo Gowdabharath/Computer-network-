@@ -60,3 +60,15 @@ $ns at 0.1 "$cbr0 start"
 $ns at 0.1 "$cbr1 start"
 $ns at 10.0 "finish"
 $ns run 
+
+awk
+BEGIN{
+#include<stdio.h>
+count=0;
+}
+{
+if($1=="d")
+count++;
+} END {
+printf("Total no. of packets dropped due to congestion is:%d\n",count);
+}
